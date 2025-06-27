@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Management System - Developer</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Developer Dashboard</h1>
+    <div class="user-info">
+      <span id="user-name"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="my-tasks-section">
+      <div class="section-header">
+        <h2>My Tasks</h2>
+        <div class="filter-container">
+          <label for="status-filter">Filter by Status:</label>
+          <select id="status-filter">
+            <option value="all">All Tasks</option>
+            <option value="to do">To Do</option>
+            <option value="in progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tasks-list" id="my-tasks-list">
+        <div class="empty-state">Loading your tasks...</div>
+      </div>
+    </section>
+
+    <section class="update-task-section hidden" id="update-task-section">
+      <h2>Update Task</h2>
+      <form id="update-task-form">
+        <input type="hidden" id="update-task-id">
+        <div class="form-group">
+          <h3 id="update-task-title"></h3>
+          <p id="update-task-project"></p>
+          <p id="update-task-description"></p>
+        </div>
+        <div class="form-group">
+          <label for="update-task-status">Update Status</label>
+          <select id="update-task-status">
+            <option value="to do">To Do</option>
+            <option value="in progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div class="form-buttons">
+          <button type="submit">Update</button>
+          <button type="button" id="cancel-update-btn">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>
+
+<script src="/js/developer.js"></script>
+</body>
+</html>

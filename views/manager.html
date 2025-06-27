@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Management System - Project Manager</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Project Manager Dashboard</h1>
+    <div class="user-info">
+      <span id="user-name"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <button id="add-project-btn">Add New Project</button>
+      </div>
+
+      <div id="project-form-container" class="form-container hidden">
+        <h3>Add/Edit Project</h3>
+        <form id="project-form">
+          <input type="hidden" id="project-id">
+          <div class="form-group">
+            <label for="project-name">Project Name</label>
+            <input type="text" id="project-name" required>
+          </div>
+          <div class="form-group">
+            <label for="project-description">Description</label>
+            <textarea id="project-description" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="project-start-date">Start Date</label>
+            <input type="date" id="project-start-date">
+          </div>
+          <div class="form-group">
+            <label for="project-deadline">Deadline</label>
+            <input type="date" id="project-deadline">
+          </div>
+          <div class="form-group">
+            <label for="project-status">Status</label>
+            <select id="project-status">
+              <option value="planned">Planned</option>
+              <option value="in progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+          <div class="form-buttons">
+            <button type="submit">Save</button>
+            <button type="button" id="cancel-project-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="projects-list" id="projects-list">
+        <div class="empty-state">Loading projects...</div>
+      </div>
+    </section>
+
+    <section class="tasks-section">
+      <div class="section-header">
+        <h2>Tasks</h2>
+        <button id="add-task-btn">Add New Task</button>
+      </div>
+
+      <div id="task-form-container" class="form-container hidden">
+        <h3>Add/Edit Task</h3>
+        <form id="task-form">
+          <input type="hidden" id="task-id">
+          <div class="form-group">
+            <label for="task-project">Project</label>
+            <select id="task-project" required>
+              <!-- Projects will be loaded here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-title">Title</label>
+            <input type="text" id="task-title" required>
+          </div>
+          <div class="form-group">
+            <label for="task-description">Description</label>
+            <textarea id="task-description" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="task-developer">Assign To</label>
+            <select id="task-developer" required>
+              <!-- Developers will be loaded here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-status">Status</label>
+            <select id="task-status">
+              <option value="to do">To Do</option>
+              <option value="in progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-due-date">Due Date</label>
+            <input type="date" id="task-due-date">
+          </div>
+          <div class="form-group">
+            <label for="task-priority">Priority</label>
+            <select id="task-priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="form-buttons">
+            <button type="submit">Save</button>
+            <button type="button" id="cancel-task-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tasks-list" id="tasks-list">
+        <div class="empty-state">Click "View Tasks" on a project to see its tasks, or create a new task.</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/js/manager.js"></script>
+</body>
+</html>
